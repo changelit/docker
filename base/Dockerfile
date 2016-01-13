@@ -6,7 +6,8 @@ ENV apt_sources /etc/apt/sources.list
 
 ADD sources.list ${apt_sources}
 
-RUN apt-get install -y openssh-server
+RUN apt-get update
+RUN apt-get install  openssh-server -y
 
 EXPOSE 22
 
