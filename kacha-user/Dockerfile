@@ -1,7 +1,7 @@
 FROM ubuntu
 MAINTAINER Ghost <https://github.com/changelit/docker.git>
 
-RUN useradd -m -s /bin/bash
+RUN useradd -m -s /bin/bash kacha
 
 USER kacha
 
