@@ -1,0 +1,5 @@
+docker run -d --name kcsot-mongodb \
+--expose 27017 \
+-v /data/kcsot-prod/mongodb:/var/lib/mongodb \
+-v /data/kcsot-prod/mongolog:/var/log/mongodb \
+kachabros.com/mongo:3.0.1 mongod -f /etc/mongod.conf
