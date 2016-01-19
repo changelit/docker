@@ -1,5 +1,14 @@
-docker run -d --name kcsot-web \
---link kcsot-mongodb:db \
---expose 3000 -p 3000:3000 \
--v /data/kcsot-prod/web:/home/kacha/programs:ro \
-kachabros.com/nodejs:0.12 sh /home/kacha/programs/run.sh
+web:
+  image: kachabros.com/nodejs:0.12
+  restart: always
+
+  container_name: kcsot-web
+
+  expose: 3000
+  ports: 3000:3000
+  external_links: kcsot-mongodb:db
+  volumes: 
+    - /data/kcsot-prod/web:/home/kacha/programs:ro
+  
+  mem_limit: 500000000
+  command: sh /home/kacha/programs/run.sh
