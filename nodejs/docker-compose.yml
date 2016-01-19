@@ -1,0 +1,5 @@
+docker run -d --name kcsot-web \
+--link kcsot-mongodb:db \
+--expose 3000 -p 3000:3000 \
+-v /data/kcsot-prod/web:/home/kacha/programs:ro \
+kachabros.com/nodejs:0.12 sh /home/kacha/programs/run.sh
